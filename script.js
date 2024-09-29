@@ -89,7 +89,14 @@ function updateStudentsTable() {
             <td>${student.gender}</td>
             <td>${student.tutour}</td>
             <td>${student.email}</td>
-            <td><button class="edit-btn">Edit</button> <button class="delete-btn">Delete</button></td>
+            <td>
+              <button class="edit-btn">
+                <i class="bi bi-pencil"></i>
+              </button>
+              <button class="delete-btn">
+                <i class="bi bi-trash"></i>
+              </button>
+            </td>
         `;
         studentsTbody.appendChild(row);
     });
