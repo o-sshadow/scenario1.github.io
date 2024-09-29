@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="login-form">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username"><br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password"><br><br>
+            <p id="error-message" style="display: none; color: red;"></p>
+            <button id="login-btn">Login</button>
+        </form>
+        <p id="register-link">Don't have an account? <a href="#" id="register-btn">Register</a></p>
+    </div>
+    <div class="register-container" style="display: none;">
+        <h2>Register</h2>
+        <form id="register-form">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username"><br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password"><br><br>
+            <label for="teacher-code">Teacher Code:</label>
+            <input type="text" id="teacher-code" name="teacher-code"><br><br>
+            <button id="register-btn">Register</button>
+        </form>
+    </div>
+
+    <div id="students-container" style="display: none;">
+        <h2>Students</h2>
+        <table id="students-table">
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Surname</th>
+                    <th>Age</th>
+                    <th>Grade</th>
+                    <th>Teacher</th>
+                    <th>Class</th>
+                    <th>Score</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="students-tbody">
+            </tbody>
+        </table>
+        <button id="add-student-btn">Add Student</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
