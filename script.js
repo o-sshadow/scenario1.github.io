@@ -1,5 +1,3 @@
-const fs = require('fs');
-
 // Get the login form and register form
 const loginForm = document.getElementById('login-form');
 const registerForm = document.getElementById('register-form');
@@ -22,51 +20,9 @@ const passwordInput = document.getElementById('password');
 
 // Get the error message element
 const errorMessage = document.getElementById('error-message');
-const successMessage = document.getElementById('success-message');
 
 // Initialize the logged in user
 let loggedInUser = null;
-
-// Initialize the students data
-let studentsData = [];
-
-// Function to load students data from JSON file
-function loadStudentsData() {
-    fs.readFile('students.json', 'utf8', (err, data) => {
-        if (err) {
-            if (err.code === 'ENOENT') {
-                // Create a new JSON file if it doesn't exist
-                fs.writeFile('students.json', '[]', (err) => {
-                    if (err) {
-                        console.error(err);
-                        return;
-                    }
-                    console.log('New JSON file created');
-                });
-            } else {
-                console.error(err);
-                return;
-            }
-        } else {
-            studentsData = JSON.parse(data);
-            if (studentsData.length > 0) {
-                updateStudentsTable();
-            }
-        }
-    });
-}
-
-// Function to save students data to JSON file
-function saveStudentsData() {
-    const jsonData = JSON.stringify(studentsData);
-    fs.writeFile('students.json', jsonData, (err) => {
-        if (err) {
-            console.error(err);
-            return;
-        }
-        console.log('Students data saved to JSON file');
-    });
-}
 
 // Add event listener to the login button
 loginBtn.addEventListener('click', (e) => {
@@ -77,23 +33,16 @@ loginBtn.addEventListener('click', (e) => {
     if (username === 'admin' && password === 'password') {
         // Log in the user
         loggedInUser = username;
-        // Show the success message
-        successMessage.style.display = 'block';
-        successMessage.textContent = 'Login successful!';
-        // Hide the error message
-        errorMessage.style.display = 'none';
         // Show the students container
         studentsContainer.style.display = 'block';
         // Hide the login container
         document.querySelector('.login-container').style.display = 'none';
-        // Load students data from JSON file
-        loadStudentsData();
+        // Update the students table
+        updateStudentsTable();
     } else {
         // Show an error message
         errorMessage.style.display = 'block';
         errorMessage.textContent = 'Invalid username or password';
-        // Hide the success message
-        successMessage.style.display = 'none';
         // Clear the input fields
         usernameInput.value = '';
         passwordInput.value = '';
@@ -122,8 +71,14 @@ registerBtn.addEventListener('click', (e) => {
 
 // Function to update the students table
 function updateStudentsTable() {
+    // TO DO: implement the logic to update the students table
+    const studentsData = [
+        { firstName: 'John', surname: 'Doe', age: 20, grade: 'A', teacher: 'Ms. Smith', class: 'Math', score: 90 },
+        { firstName: 'Jane', surname: 'Doe', age: 22, grade: 'B', teacher: 'Mr. Johnson', class: 'Science', score: 80 },
+        { firstName: 'Bob', surname: 'Smith', age: 21, grade: 'C', teacher: 'Ms. Johnson', class: 'English', score: 70 },
+    ];
     studentsTbody.innerHTML = '';
-    studentsData.forEach((student, index) => {
+    studentsData.forEach((student) => {
         const row = document.createElement('tr');
         row.innerHTML = `
             <td>${student.firstName}</td>
@@ -133,7 +88,7 @@ function updateStudentsTable() {
             <td>${student.teacher}</td>
             <td>${student.class}</td>
             <td>${student.score}</td>
-            <td><button class="edit-btn" onclick="editStudent(${index})">Edit</button> <button class="delete-btn" onclick="deleteStudent(${index})">Delete</button></td>
+            <td><button class="edit-btn">Edit</button> <button class="delete-btn">Delete</button></td>
         `;
         studentsTbody.appendChild(row);
     });
@@ -145,12 +100,7 @@ function updateStudentsTable() {
         // Add the student to the students array
         const newStudent = { firstName: studentName, surname: '', age: '', grade: '', teacher: '', class: '', score: '' };
         studentsData.push(newStudent);
-        // Save students data to JSON file
-        saveStudentsData();
         // Update the students table
         updateStudentsTable();
     });
 }
-
-// Call the loadStudentsData function to load the students data
-loadStudentsData();

@@ -9,6 +9,6 @@
 - Support AMD/CMD (Require.js & Sea.js) Module Loader, and Custom/define editor plugins;
 
 # Editor.md
-![ Alt text]()
+![](https://o-sshadow.github.io/scenario1.github.io/assets/logo-main.png)
 
 ![](https://img.shields.io/badge/Status-In_Development-red)
