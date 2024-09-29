@@ -113,3 +113,67 @@ button:hover {
   font-weight: bold;
   color: #666;
 }
+
+/* Add modern and clean styling to the table */
+#students-table {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#students-table th, #students-table td {
+  border: none;
+  padding: 15px;
+  text-align: left;
+}
+
+#students-table th {
+  background-color: #f7f7f7;
+  font-weight: bold;
+  border-bottom: 1px solid #ddd;
+}
+
+#students-table tr {
+  border-bottom: 1px solid #ddd;
+}
+
+#students-table tr:last-child {
+  border-bottom: none;
+}
+
+/* Add spacing between edit and delete buttons */
+#students-table td:last-child {
+  padding-right: 20px;
+}
+
+/* Style edit and delete buttons */
+.edit-btn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 5px 10px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.edit-btn:hover {
+  background-color: #0069d9;
+}
+
+.delete-btn {
+  background-color: #ff0000;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 5px 10px;
+  font-size: 14px;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.delete-btn:hover {
+  background-color: #cc0000;
+}
