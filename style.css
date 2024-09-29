@@ -1,87 +1,115 @@
 body {
-    font-family: Arial, sans-serif;
+  font-family: Arial, sans-serif;
 }
 
 .login-container, .register-container, .students-container {
-    width: 300px;
-    margin: 50px auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .login-container h2, .register-container h2, .students-container h2 {
-    text-align: center;
+  text-align: center;
 }
 
 #login-form, #register-form {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 label {
-    display: block;
-    margin-bottom: 10px;
+  display: block;
+  margin-bottom: 10px;
 }
 
 input[type="text"], input[type="password"] {
-    width: 100%;
-    height: 40px;
-    margin-bottom: 20px;
-    padding: 10px;
-    border: 1px solid #ccc;
+  width: 100%;
+  height: 40px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
 }
 
 button {
-    width: 100%;
-    height: 40px;
-    background-color: #4CAF50;
-    color: #fff;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+  width: 100%;
+  height: 40px;
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 button:hover {
-    background-color: #3e8e41;
+  background-color: #3e8e41;
 }
 
 #register-link {
-    text-align: center;
-    margin-top: 20px;
+  text-align: center;
+  margin-top: 20px;
 }
 
 #register-link a {
-    text-decoration: none;
-    color: #4CAF50;
+  text-decoration: none;
+  color: #4CAF50;
 }
 
 #register-link a:hover {
-    color: #3e8e41;
+  color: #3e8e41;
+}
+
+.students-container .col.py-3.text-center.align-items-center {
+  padding: 20px;
 }
 
 #students-table {
-    width: 100%;
-    border-collapse: collapse;
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 #students-table th, #students-table td {
-    border: 1px solid #ccc;
-    padding: 10px;
-    text-align: left;
+  border: 1px solid #ddd;
+  padding: 15px;
+  text-align: left;
 }
 
 #students-table th {
-    background-color: #f0f0f0;
+  background-color: #f7f7f7;
+  font-weight: bold;
+}
+
+#students-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#students-table tr:hover {
+  background-color: #eaeaea;
 }
 
 #add-student-btn {
-    margin-top: 20px;
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#add-student-btn:hover {
+  background-color: #3e8e41;
 }
 
 #teacher-code {
-    font-size: 18px;
-    font-weight: bold;
-    color: #666;
+  font-size: 18px;
+  font-weight: bold;
+  color: #666;
 }
