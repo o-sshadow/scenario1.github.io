@@ -73,9 +73,9 @@ registerBtn.addEventListener('click', (e) => {
 function updateStudentsTable() {
     // TO DO: implement the logic to update the students table
     const studentsData = [
-        { firstName: 'John', surname: 'Doe', age: 20, grade: 'A', teacher: 'Ms. Smith', class: 'Math', score: 90 },
-        { firstName: 'Jane', surname: 'Doe', age: 22, grade: 'B', teacher: 'Mr. Johnson', class: 'Science', score: 80 },
-        { firstName: 'Bob', surname: 'Smith', age: 21, grade: 'C', teacher: 'Ms. Johnson', class: 'English', score: 70 },
+        { firstName: 'John', surname: 'Doe', birth: 20, address: 'A', number: 'Ms. Smith', gender: 'Math', tutour: 90, email: 'email@gmail.com' },
+        { firstName: 'Jane', surname: 'Doe', birth: 22, address: 'B', number: 'Mr. Johnson', gender: 'Science', tutour: 80, email: 'email@gmail.com' },
+        { firstName: 'Bob', surname: 'Smith', birth: 21, address: 'C', number: 'Ms. Johnson', gender: 'English', tutour: 70, email: 'email@gmail.com' },
     ];
     studentsTbody.innerHTML = '';
     studentsData.forEach((student) => {
@@ -83,11 +83,12 @@ function updateStudentsTable() {
         row.innerHTML = `
             <td>${student.firstName}</td>
             <td>${student.surname}</td>
-            <td>${student.age}</td>
-            <td>${student.grade}</td>
-            <td>${student.teacher}</td>
-            <td>${student.class}</td>
-            <td>${student.score}</td>
+            <td>${student.birth}</td>
+            <td>${student.address}</td>
+            <td>${student.number}</td>
+            <td>${student.gender}</td>
+            <td>${student.tutour}</td>
+            <td>${student.email}</td>
             <td><button class="edit-btn">Edit</button> <button class="delete-btn">Delete</button></td>
         `;
         studentsTbody.appendChild(row);
@@ -96,9 +97,16 @@ function updateStudentsTable() {
     const addStudentBtn = document.getElementById('add-student-btn');
     addStudentBtn.addEventListener('click', () => {
         // Get the student's name
-        const studentName = prompt('Enter the student\'s name');
+        const studentfirstName = prompt('First Name:');
+        const studentsurname = prompt('Surname Name:');
+        const studentbirth = prompt('Birth:');
+        const studentaddress = prompt('Address:');
+        const studentnumber = prompt('Number:');
+        const studentgender = prompt('Gender:');
+        const studenttutour = prompt('Tutour:');
+        const studentemail = prompt('Email:');
         // Add the student to the students array
-        const newStudent = { firstName: studentName, surname: '', age: '', grade: '', teacher: '', class: '', score: '' };
+        const newStudent = { firstName: studentfirstName, surname: studentsurname, birth: studentbirth, address: studentaddress, number: studentnumber, gender: studentgender, tutour: studenttutour, email: studentemail };
         studentsData.push(newStudent);
         // Update the students table
         updateStudentsTable();
