@@ -1,8 +1,8 @@
 <?php
 $servername = "dev.pandapvp.net";
-$username = "mysql";
-$password = "mysqldb8383p4nel";
-$dbname = "analytics_database";
+$username = "scenario1";
+$password = "yUK)P3@cyfVeV@p@";
+$dbname = "scenario1";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
