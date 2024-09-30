@@ -1,4 +1,6 @@
 <?php
+header('Content-Type: application/json');
+
 require_once 'db.php';
 
 // Get the database connection
@@ -34,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->bind_param("ssssssss", $firstName, $surname, $birth, $address, $number, $gender, $tutour, $email);
     $stmt->execute();
 
-    echo "Student added successfully";
+    echo json_encode(array('message' => 'Student added successfully'));
   }
 }
 
