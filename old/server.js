@@ -6,10 +6,10 @@ const knex = require('knex');
 const db = knex({
     client: 'pg',
     connection: {
-        host: 'ep-soft-brook-a213aspf-pooler.eu-central-1.aws.neon.tech',
-        user: 'default',
-        password: 'l4GeWjszy8hr',
-        database: 'verceldb'
+        host: '',
+        user: '',
+        password: '',
+        database: ''
     }
 })
 
